@@ -28,6 +28,32 @@ int main()
 		}
 	}
 
+	//std::list<int> l;
+
+	//l.push_back(2);
+	//l.push_back(12);
+	//l.push_back(9);
+	//l.push_back(7);
+	//l.push_back(11);
+	//l.push_back(15);
+	//l.push_back(5);
+	//l.push_back(0);
+
+	//for (int i = 0; i < 16; i++)
+	//{
+	//	std::cout << i << " = ";
+
+	//	try
+	//	{
+	//		std::list<int>::iterator it = ::easyfind(l, i);
+	//		std::cout << *it << std::endl;
+	//	}
+	//	catch (std::exception &e)
+	//	{
+	//		std::cout << e.what() << std::endl;
+	//	}
+	//}
+
 	// std::vector<std::string> c;
 
 	// c.push_back("aaa");
