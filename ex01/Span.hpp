@@ -2,17 +2,16 @@
 #define SPAN_HPP
 
 #include <iostream>
-#include <list>
 #include <exception>
 #include <vector>
 #include <algorithm>
+#include <climits>
 
 
 class Span
 {
 	private:
 		unsigned int		_N;
-		unsigned int		_count;
 		std::vector<int>	_v;
 	
 	public:
@@ -23,10 +22,20 @@ class Span
 		~Span();
 
 		void addNumber(int i);
-		std::iterator* shortestSpan();
+		template <typename Iterator> void addNumber(Iterator begin, Iterator end);
+		int shortestSpan();
+		int longestSpan();
 		void checkVector();
 
-		class EnaughtNum : public std::exception
+		class EnoughNum : public std::exception
+		{
+			const char* what() const throw();
+		};
+		class NoNum : public std::exception
+		{
+			const char* what() const throw();
+		};
+		class OneNum : public std::exception
 		{
 			const char* what() const throw();
 		};
