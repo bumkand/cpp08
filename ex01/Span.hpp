@@ -22,7 +22,14 @@ class Span
 		~Span();
 
 		void addNumber(int i);
-		template <typename Iterator> void addNumber(Iterator begin, Iterator end);
+		template <typename Iterator>
+		void addNumber(Iterator begin, Iterator end)
+		{
+			if (_v.size() + std::distance(begin, end) > _N)
+				throw EnoughNum();
+			else
+				_v.insert(_v.begin(), begin, end);
+		}
 		int shortestSpan();
 		int longestSpan();
 		void checkVector();

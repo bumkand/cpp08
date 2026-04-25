@@ -43,6 +43,15 @@ void Span::addNumber(int i)
 		_v.push_back(i);
 }
 
+//template <typename Iterator>
+//void Span::addNumber(Iterator begin, Iterator end)
+//{
+//	if (_v.size() + std::distance(begin, end) > _N)
+//		throw EnoughNum();
+//	else
+//		_v.insert(begin, end);
+//}
+
 int Span::shortestSpan()
 {
 	if (_v.size() == 0)
