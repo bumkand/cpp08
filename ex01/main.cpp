@@ -3,6 +3,7 @@
 
 int main()
 {
+	std::cout << "------- Test Span -------" << std::endl;
 	Span	sp = Span(50);
 
 	try
@@ -28,6 +29,7 @@ int main()
 	sp.checkVector();
 	std::cout << std::endl;
 
+	std::cout << "------- Compare Adding With List -------" << std::endl;
 
 	std::list<int>	l;
 
@@ -55,6 +57,28 @@ int main()
 	
 	sp.checkVector();
 	std::cout << std::endl;
+
+	std::cout << "------- Test With More Than 10 000 Numbers -------" << std::endl;
+
+	Span	bigSp(20000);
+	std::vector<int>	bigVector;
+	srand(time(NULL));
+
+	for(int i = 0; i < 20000; i++)
+		bigVector.push_back(rand());
+	
+	bigSp.addNumber(bigVector.begin(), bigVector.end());
+
+	std::vector<int>::iterator it = bigVector.begin();
+	//std::vector<int>::iterator ite = bigVector.end();
+	for (int i = 0; i < 20; i++)
+	{
+		std::cout << *it << std::endl;
+		++it;
+	}
+
+	std::cout << "Big Shortest: " << bigSp.shortestSpan() << std::endl;
+	std::cout << "Big Longest: " << bigSp.longestSpan() << std::endl;
 
 
 	return 0;

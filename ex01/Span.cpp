@@ -73,12 +73,10 @@ int Span::longestSpan()
 	if (_v.size() == 1)
 		throw OneNum();
 
-	std::vector<int> tmp = _v;
-	sort(tmp.begin(), tmp.end());
+	int minVal = *std::min_element(_v.begin(), _v.end());
+	int maxVal = *std::max_element(_v.begin(), _v.end());
 	
-	int diff = tmp.back() - tmp.front();
-
-	return diff;
+	return maxVal - minVal;
 }
 
 void Span::checkVector()
